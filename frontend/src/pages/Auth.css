@@ -1,0 +1,173 @@
+.auth-page-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  background-color: var(--color-bg);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.auth-image-section {
+  flex: 1;
+  /* Photo: vegetables at a market — Unsplash, served locally for reliability. */
+  background-image: url('/auth-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: none; /* hidden on small screens */
+  animation: authImageSettle 1.2s var(--ease-out-soft);
+}
+
+@keyframes authImageSettle {
+  from { transform: scale(1.06); opacity: 0.6; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@media (min-width: 900px) {
+  .auth-image-section {
+    display: block;
+  }
+}
+
+.auth-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(4, 120, 87, 0.3), rgba(15, 23, 42, 0.85));
+  display: flex;
+  align-items: flex-end;
+  padding: 64px;
+}
+
+.auth-hero-text {
+  color: white;
+  max-width: 480px;
+  animation: authTextIn 0.8s var(--ease-out-soft) 0.2s backwards;
+}
+
+@keyframes authTextIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.auth-hero-text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.auth-hero-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.auth-form-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+.auth-form-card {
+  width: 100%;
+  max-width: 420px;
+  animation: cardEnter 0.5s var(--ease-out-soft) 0.1s backwards;
+}
+
+.auth-form-card .brand {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-form-card h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+  color: var(--color-secondary);
+}
+
+.auth-form-card .subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.auth-form input,
+.auth-form select {
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: inherit;
+  background-color: var(--color-bg);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  color: var(--color-text-main);
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+  background-color: var(--color-surface);
+}
+
+.auth-btn {
+  margin-top: 12px;
+  padding: 14px;
+  font-size: 16px;
+}
+
+.auth-prompt {
+  margin-top: 32px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 15px;
+}
+
+.auth-prompt a {
+  font-weight: 600;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row label {
+  flex: 1;
+}
+
+@media (max-width: 520px) {
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/assets/banner.svg" alt="Khaana Bachaao — Food Donation Platform" width="100%" /></p>
+
 # Khaana Bachaao 🍽️
 
 **A food wastage management platform that moves surplus food from donors to the people who need it — before it hits the landfill.**
